@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci
+package www.breadboy.com.ctci.questionlist
 
 import javax.inject.Scope
 

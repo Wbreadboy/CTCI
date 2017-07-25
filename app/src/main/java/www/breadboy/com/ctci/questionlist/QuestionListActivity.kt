@@ -36,8 +36,8 @@ class QuestionListActivity : QuestionListContract.View() {
     }
 
     override fun setupActivityComponent() {
-        (CtciApplication[this].getQuestionListComponentBuilder(QuestionListActivity::class.java) as QuestionListComponent.Builder)
-                .questionListMoudule(QuestionListModule(this))
+        (CtciApplication[this].getQuestionComponentBuilder(QuestionListActivity::class.java) as QuestionListComponent.Builder)
+                .questionMoudule(QuestionListModule(this))
                 .build()
                 .injectMembers(this)
     }

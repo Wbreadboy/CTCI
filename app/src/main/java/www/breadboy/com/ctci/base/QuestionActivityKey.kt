@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.questionlist
+package www.breadboy.com.ctci.base
 
 import android.app.Activity
 import dagger.MapKey
@@ -11,4 +11,4 @@ import kotlin.reflect.KClass
 @MapKey
 @Target(AnnotationTarget.FUNCTION)
 @Retention(AnnotationRetention.RUNTIME)
-annotation class QuestionListKey(val value: KClass<out Activity>)
+annotation class QuestionActivityKey(val value: KClass<out Activity>)

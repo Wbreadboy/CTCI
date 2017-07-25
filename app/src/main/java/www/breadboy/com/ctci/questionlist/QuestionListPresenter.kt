@@ -1,6 +1,5 @@
 package www.breadboy.com.ctci.questionlist
 
-import www.breadboy.com.ctci.ActivityScope
 import www.breadboy.com.ctci.data.Question
 import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 import javax.inject.Inject

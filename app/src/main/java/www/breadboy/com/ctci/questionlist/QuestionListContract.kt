@@ -1,8 +1,8 @@
 package www.breadboy.com.ctci.questionlist
 
 import android.content.Context
-import www.breadboy.com.ctci.BaseActivity
-import www.breadboy.com.ctci.BasePresenter
+import www.breadboy.com.ctci.base.BaseActivity
+import www.breadboy.com.ctci.base.BasePresenter
 
 /**
  * Created by SDG on 2017. 7. 12..

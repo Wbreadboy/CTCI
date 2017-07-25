@@ -1,55 +1,55 @@
 package www.breadboy.com.ctci.question2_runner
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_runner_technique.*
 import www.breadboy.com.ctci.R
+import www.breadboy.com.ctci.application.CtciApplication
+import www.breadboy.com.ctci.questionlist.QuestionListActivity
+import www.breadboy.com.ctci.questionlist.QuestionListComponent
+import www.breadboy.com.ctci.questionlist.QuestionListModule
+import javax.inject.Inject
 
 class RunnerTechniqueActivity : RunnerTechniqueContract.View(), View.OnClickListener {
-    lateinit var linkedList: LinkedList<String>
+
+    @Inject
+    lateinit var runnerTechniqueActivity: RunnerTechniqueActivity
+
+    @Inject
+    lateinit var runnerTechniquePresenter: RunnerTechniqueContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_runner_technique)
 
-        initLinkedList()
+        setContentView(R.layout.activity_runner_technique)
+        setupActivityComponent()
         initView()
     }
 
-    fun initLinkedList() {
-        linkedList = LinkedList()
+    override fun onResume() {
+        super.onResume()
+
+        runnerTechniquePresenter.start()
     }
 
     fun initView() {
         btn_activity_runner.setOnClickListener(this)
     }
 
-    fun inputNodeToLinkedList() {
-        linkedList.removeAll()
-        linkedList.appendToEditText(edittext_activity_runner.text.toString())
-
-        printRunnerTeqhLinkedList()
-
-        runSearchLinkedList()
-    }
-
-    fun runSearchLinkedList() {
-        linkedList.runnerTechnique(1, 2)
-
-        printRunnerTeqhLinkedList()
-    }
-
-    fun printRunnerTeqhLinkedList() {
-        textview_activity_runner.setText(linkedList.toString())
-    }
-
     override fun setupActivityComponent() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        (CtciApplication[this].getQuestionComponentBuilder(RunnerTechniqueActivity::class.java) as RunnerTechniqueComponent.Builder)
+                .questionMoudule(RunnerTechniqueModule(this))
+                .build()
+                .injectMembers(this)
     }
 
     override fun onClick(view: View?) {
         when (view) {
-            btn_activity_runner -> inputNodeToLinkedList()
+            btn_activity_runner -> runnerTechniquePresenter.clickInputBtn()
         }
     }
 }

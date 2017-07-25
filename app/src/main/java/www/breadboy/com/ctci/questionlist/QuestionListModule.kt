@@ -3,14 +3,14 @@ package www.breadboy.com.ctci.questionlist
 import android.support.v7.widget.LinearLayoutManager
 import dagger.Module
 import dagger.Provides
-import www.breadboy.com.ctci.ActivityScope
+import www.breadboy.com.ctci.base.BaseModule
 
 /**
  * Created by SDG on 2017. 7. 12..
  */
 
 @Module
-class QuestionListModule(var questionListActivity: QuestionListActivity) {
+class QuestionListModule(var questionListActivity: QuestionListActivity) : BaseModule<QuestionListActivity>(questionListActivity) {
 
     @ActivityScope
     @Provides

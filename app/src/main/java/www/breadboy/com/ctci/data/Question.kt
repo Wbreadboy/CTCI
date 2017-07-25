@@ -1,6 +1,6 @@
 package www.breadboy.com.ctci.data
 
-import www.breadboy.com.ctci.BaseActivity
+import www.breadboy.com.ctci.base.BaseActivity
 
 /**
  * Created by SDG on 2017. 7. 12..

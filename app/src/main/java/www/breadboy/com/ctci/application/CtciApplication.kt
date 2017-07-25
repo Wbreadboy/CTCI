@@ -3,20 +3,20 @@ package www.breadboy.com.ctci.application
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import www.breadboy.com.ctci.questionlist.HasQuestionListComponentBuilders
-import www.breadboy.com.ctci.questionlist.QuestionListComponentBuilder
+import www.breadboy.com.ctci.base.HasQuestionSubcomponentBuilders
+import www.breadboy.com.ctci.base.QuestionComponentBuilder
 import javax.inject.Inject
 import javax.inject.Provider
 
 /**
  * Created by SDG on 2017. 7. 12..
  */
-class CtciApplication : Application(), HasQuestionListComponentBuilders {
+class CtciApplication : Application(), HasQuestionSubcomponentBuilders {
 
     lateinit var ctciApplicationComponent: CtciApplicationComponent
 
     @Inject
-    lateinit var questionListComponentBuilders: Map<Class<out Activity>, @JvmSuppressWildcards Provider<QuestionListComponentBuilder<*, *>>>
+    lateinit var questionComponentBuilders: Map<Class<out Activity>, @JvmSuppressWildcards Provider<QuestionComponentBuilder<*, *>>>
 
     override fun onCreate() {
         super.onCreate()
@@ -33,13 +33,13 @@ class CtciApplication : Application(), HasQuestionListComponentBuilders {
         return ctciApplicationComponent
     }
 
-    override fun getQuestionListComponentBuilder(activity: Class<out Activity>): QuestionListComponentBuilder<*, *> {
-        return questionListComponentBuilders[activity]!!.get()
+    override fun getQuestionComponentBuilder(activity: Class<out Activity>): QuestionComponentBuilder<*, *> {
+        return questionComponentBuilders[activity]!!.get()
     }
 
     companion object {
-        operator fun get(context: Context): HasQuestionListComponentBuilders {
-            return context.applicationContext as HasQuestionListComponentBuilders
+        operator fun get(context: Context): HasQuestionSubcomponentBuilders {
+            return context.applicationContext as HasQuestionSubcomponentBuilders
         }
     }
 }
