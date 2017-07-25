@@ -1,5 +1,9 @@
 package www.breadboy.com.ctci.question2_runner
 
+import android.text.TextUtils
+import android.util.Log
+import org.w3c.dom.NodeList
+
 /**
  * Created by N4039 on 2017-07-24.
  */
@@ -23,6 +27,14 @@ class LinkedList<T> {
         }
 
         return node
+    }
+
+    fun appendToEditText(linkedList: String) {
+        val nodeArray: Array<String> = TextUtils.split(linkedList, "\\s+")
+
+        for (node in nodeArray) {
+            appendToTail(node as T)
+        }
     }
 
     fun appendToTail(value: T) {
@@ -70,6 +82,10 @@ class LinkedList<T> {
         return node.value
     }
 
+    fun removeAll() {
+        head = null
+    }
+
     fun runnerTechnique(followCount: Int, runCount: Int) {
         follower = head
         runner = runToLinkedList(head, runCount - 1)
@@ -77,27 +93,52 @@ class LinkedList<T> {
         while (runner?.next != null) {
             follower = runToLinkedList(follower, followCount)
             runner = runToLinkedList(runner, runCount)
+
+            Log.e("!!!!!!!!!!!!!!!!!", follower?.value.toString())
+            Log.e("!!!!!!!!!!!!!!!!!", runner?.value.toString())
         }
 
-        runner = runToLinkedList(head, runCount - 1)
+        follower = runToLinkedList(follower, followCount)
+        runner = head
 
         while (follower?.next != null) {
-            appendToNode(runner, follower!!.value)
+            val nextFollowNode = follower
             follower = runToLinkedList(follower, followCount)
+
+            appendToNode(runner, nextFollowNode!!.value)
+            removeNode(nextFollowNode)
+
+            runner = runToLinkedList(runner, runCount)
         }
     }
 
     fun runToLinkedList(node: Node<T>?, count: Int): Node<T>? {
-        var runNode: Node<T>? = null
+        var runNode: Node<T>? = node
 
-        for (i in 0..count) {
-            if (node?.next == null) {
+        for (i in 0 until count) {
+            if (runNode?.next == null) {
                 return null
             }
 
-            runNode = node.next
+            runNode = runNode.next
         }
 
         return runNode
+    }
+
+    override fun toString(): String {
+        val linkedListSb: StringBuilder = StringBuilder()
+        var node = head
+
+        while (node != null) {
+            linkedListSb.append(node.value)
+
+            node = node.next
+            if (node != null) {
+                linkedListSb.append(" -> ")
+            }
+        }
+
+        return linkedListSb.toString()
     }
 }

@@ -9,5 +9,15 @@ import www.breadboy.com.ctci.BasePresenter
 interface RunnerTechniqueContract {
     abstract class View : BaseActivity<Presenter>()
 
-    interface Presenter : BasePresenter
+    interface Presenter : BasePresenter {
+        fun initLinkedList()
+
+        fun initView()
+
+        fun inputNodeToLinkedList()
+
+        fun runSearchLinkedList()
+
+        fun printRunnerTechLinkedList()
+    }
 }
