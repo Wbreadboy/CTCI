@@ -119,7 +119,7 @@ class LinkedList<T> {
      * Runner technique
      *
      * @param followCount   뒤따라가는 pointer의 이동 거리
-     * @param runCount      앞서가는 porinter의 이동 거리
+     * @param runCount      앞서가는 pointer의 이동 거리
      */
     fun runnerTechnique(followCount: Int, runCount: Int) {
         follower = head
