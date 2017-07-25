@@ -3,6 +3,7 @@ package www.breadboy.com.ctci.questionlist
 import android.content.Context
 import www.breadboy.com.ctci.BaseActivity
 import www.breadboy.com.ctci.BasePresenter
+import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 
 /**
  * Created by SDG on 2017. 7. 12..

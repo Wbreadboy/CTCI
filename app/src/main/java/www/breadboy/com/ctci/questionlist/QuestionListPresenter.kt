@@ -2,6 +2,7 @@ package www.breadboy.com.ctci.questionlist
 
 import www.breadboy.com.ctci.ActivityScope
 import www.breadboy.com.ctci.data.Question
+import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 import javax.inject.Inject
 
 /**
@@ -15,6 +16,6 @@ class QuestionListPresenter
 constructor(val questionListActivity: QuestionListActivity) : QuestionListContract.Presenter {
 
     override fun start() {
-        questionListActivity.questionListAdapter.addQuestion(Question(QuestionListActivity(), "2-runner"))
+        questionListActivity.questionListAdapter.addQuestion(Question(RunnerTechniqueActivity(), "2-runner"))
     }
 }
