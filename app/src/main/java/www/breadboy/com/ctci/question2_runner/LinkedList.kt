@@ -1,11 +1,11 @@
 package www.breadboy.com.ctci.question2_runner
 
 import android.text.TextUtils
-import android.util.Log
-import org.w3c.dom.NodeList
 
 /**
  * Created by N4039 on 2017-07-24.
+ *
+ * Runner technique LinkedList
  */
 
 class LinkedList<T> {
@@ -15,6 +15,11 @@ class LinkedList<T> {
     private var follower: Node<T>? = null
     private var runner: Node<T>? = null
 
+    /**
+     * LinkedList의 마지막 node를 반환
+     *
+     * @return  마지막 노드
+     */
     fun findLastNode(): Node<T>? {
         var node = head
 
@@ -29,6 +34,11 @@ class LinkedList<T> {
         return node
     }
 
+    /**
+     * EditText view에서 입력된 값을 LinkedList로 변환
+     *
+     * @param linkedList    EditText getText
+     */
     fun appendToEditText(linkedList: String) {
         val nodeArray: Array<String> = TextUtils.split(linkedList, "\\s+")
 
@@ -37,6 +47,11 @@ class LinkedList<T> {
         }
     }
 
+    /**
+     * LinkedList의 제일 마지막에 node 삽입
+     *
+     * @param value value
+     */
     fun appendToTail(value: T) {
         val newNode = Node(value)
         val lastNode = this.findLastNode()
@@ -49,6 +64,12 @@ class LinkedList<T> {
         }
     }
 
+    /**
+     * 해당 node 다음에 새로운 node 삽입
+     *
+     * @param targetNode    target node
+     * @param value         inserting node value
+     */
     fun appendToNode(targetNode: Node<T>?, value: T) {
         val newNode = Node(value)
         val nextNode = targetNode?.next
@@ -64,6 +85,11 @@ class LinkedList<T> {
         newNode.next = nextNode
     }
 
+    /**
+     * 해당 노드를 삭제
+     *
+     * @param node      deleting node
+     */
     fun removeNode(node: Node<T>): T {
         val prevNode = node.previous
         val nextNode = node.next
@@ -82,10 +108,19 @@ class LinkedList<T> {
         return node.value
     }
 
+    /**
+     * 모든 노드 삭제
+     */
     fun removeAll() {
         head = null
     }
 
+    /**
+     * Runner technique
+     *
+     * @param followCount   뒤따라가는 pointer의 이동 거리
+     * @param runCount      앞서가는 porinter의 이동 거리
+     */
     fun runnerTechnique(followCount: Int, runCount: Int) {
         follower = head
         runner = runToLinkedList(head, runCount - 1)
@@ -93,9 +128,6 @@ class LinkedList<T> {
         while (runner?.next != null) {
             follower = runToLinkedList(follower, followCount)
             runner = runToLinkedList(runner, runCount)
-
-            Log.e("!!!!!!!!!!!!!!!!!", follower?.value.toString())
-            Log.e("!!!!!!!!!!!!!!!!!", runner?.value.toString())
         }
 
         follower = runToLinkedList(follower, followCount)
@@ -112,6 +144,13 @@ class LinkedList<T> {
         }
     }
 
+    /**
+     * 해당 node를 입력한 거리만큼 이동
+     *
+     * @param count 이동시킬 거리
+     * @param node  이동시킬 node
+     * @return      이동시킨 node 반환
+     */
     fun runToLinkedList(node: Node<T>?, count: Int): Node<T>? {
         var runNode: Node<T>? = node
 
@@ -126,6 +165,11 @@ class LinkedList<T> {
         return runNode
     }
 
+    /**
+     * 모든 node printing
+     *
+     * @return All node
+     */
     override fun toString(): String {
         val linkedListSb: StringBuilder = StringBuilder()
         var node = head
