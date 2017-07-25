@@ -2,6 +2,7 @@
 
 ### Kotlin + Dagger2 + MVP
 
+
 ### 170725(tue)
 chapter2 - runner technique (second searching)
 
