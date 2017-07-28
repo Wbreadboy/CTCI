@@ -7,6 +7,8 @@ import www.breadboy.com.ctci.base.QuestionActivityKey
 import www.breadboy.com.ctci.base.QuestionComponentBuilder
 import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 import www.breadboy.com.ctci.question2_runner.RunnerTechniqueComponent
+import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterActivity
+import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterComponent
 import www.breadboy.com.ctci.questionlist.QuestionListActivity
 import www.breadboy.com.ctci.questionlist.QuestionListComponent
 
@@ -14,7 +16,11 @@ import www.breadboy.com.ctci.questionlist.QuestionListComponent
  * Created by SDG on 2017. 7. 18..
  */
 
-@Module(subcomponents = arrayOf(QuestionListComponent::class, RunnerTechniqueComponent::class))
+@Module(subcomponents = arrayOf(
+        QuestionListComponent::class,
+        RunnerTechniqueComponent::class,
+        AnimalShelterComponent::class))
+
 abstract class CtciApplicationModule {
 
     @Binds
@@ -26,4 +32,9 @@ abstract class CtciApplicationModule {
     @IntoMap
     @QuestionActivityKey(RunnerTechniqueActivity::class)
     abstract fun bindRunnerTechniqueActivity(impl: RunnerTechniqueComponent.Builder): QuestionComponentBuilder<*, *>
+
+    @Binds
+    @IntoMap
+    @QuestionActivityKey(AnimalShelterActivity::class)
+    abstract fun bindAnimalShelterActivity(impl: AnimalShelterComponent.Builder): QuestionComponentBuilder<*, *>
 }

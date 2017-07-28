@@ -27,7 +27,6 @@ class RunnerTechniqueActivity : RunnerTechniqueContract.View(), View.OnClickList
 
         setContentView(R.layout.activity_runner_technique)
         setupActivityComponent()
-        initView()
     }
 
     override fun onResume() {
@@ -36,7 +35,7 @@ class RunnerTechniqueActivity : RunnerTechniqueContract.View(), View.OnClickList
         runnerTechniquePresenter.start()
     }
 
-    fun initView() {
+    override fun initView() {
         btn_activity_runner.setOnClickListener(this)
     }
 

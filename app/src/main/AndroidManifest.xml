@@ -10,7 +10,6 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
-
 		<activity android:name=".questionlist.QuestionListActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
@@ -18,10 +17,12 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
-
 		<activity android:name=".question2_runner.RunnerTechniqueActivity">
 		</activity>
-
+		<activity android:name=".question3_animal_shelter.Queue.AnimalShelterActivity">
+		</activity>
+		<activity android:name=".question3_animal_shelter.AnimalShelterActivity">
+		</activity>
 	</application>
 
 </manifest>

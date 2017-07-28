@@ -46,4 +46,8 @@ class QuestionListActivity : QuestionListContract.View() {
         activity_main_recyclerview.setLayoutManager(linearLayoutManager)
         activity_main_recyclerview.setAdapter(questionListAdapter)
     }
+
+    override fun initView() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }
