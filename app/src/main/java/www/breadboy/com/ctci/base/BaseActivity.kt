@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci
+package www.breadboy.com.ctci.base
 
 import android.app.Activity
 import android.content.Context
@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 
 /**
  * Created by SDG on 2017. 7. 12..
