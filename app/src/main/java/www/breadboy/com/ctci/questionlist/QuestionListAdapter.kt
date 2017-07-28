@@ -3,7 +3,7 @@ package www.breadboy.com.ctci.questionlist
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import www.breadboy.com.ctci.base.BaseActivity
+import www.breadboy.com.ctci.BaseActivity
 import www.breadboy.com.ctci.R
 import www.breadboy.com.ctci.data.Question
 import javax.inject.Inject

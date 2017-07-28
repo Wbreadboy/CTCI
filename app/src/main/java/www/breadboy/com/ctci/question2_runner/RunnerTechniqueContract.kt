@@ -1,8 +1,6 @@
 package www.breadboy.com.ctci.question2_runner
 
-import android.widget.EditText
-import android.widget.TextView
-import www.breadboy.com.ctci.base.BaseActivity
+import www.breadboy.com.ctci.BaseActivity
 import www.breadboy.com.ctci.base.BasePresenter
 
 /**
