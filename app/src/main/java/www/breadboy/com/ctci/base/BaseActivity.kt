@@ -14,10 +14,7 @@ abstract class BaseActivity<T> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
 
-        initView()
     }
-
-    abstract fun initView()
 
     abstract fun setupActivityComponent()
 

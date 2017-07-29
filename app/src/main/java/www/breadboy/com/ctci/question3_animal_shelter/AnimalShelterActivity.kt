@@ -19,6 +19,8 @@ class AnimalShelterActivity : AnimalShelterContract.View(), View.OnClickListener
 
         setContentView(R.layout.activity_animal_shelter)
         setupActivityComponent()
+
+        initView()
     }
 
     override fun onResume() {
@@ -27,7 +29,7 @@ class AnimalShelterActivity : AnimalShelterContract.View(), View.OnClickListener
         animalShelterPresenter.start()
     }
 
-    override fun initView() {
+    fun initView() {
         btn_activity_animal_shelter.setOnClickListener(this)
     }
 

@@ -17,7 +17,7 @@
 		android:textSize="20sp"/>
 
 	<EditText
-		android:id="@+id/edittext_choice_activity_animal_shelter"
+		android:id="@+id/edittext_activity_animal_shelter"
 		android:layout_width="match_parent"
 		android:layout_height="50dp"
 		android:hint="@string/input_animal_hint"/>

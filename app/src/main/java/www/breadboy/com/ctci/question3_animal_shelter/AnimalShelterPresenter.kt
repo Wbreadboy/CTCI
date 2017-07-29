@@ -1,5 +1,6 @@
 package www.breadboy.com.ctci.question3_animal_shelter
 
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_animal_shelter.*
 import www.breadboy.com.ctci.question3_animal_shelter.queue.Queue
 import www.breadboy.com.ctci.question3_animal_shelter.data.Animal
@@ -20,6 +21,7 @@ class AnimalShelterPresenter
     override fun start() {
         initQueue()
         inputNodeToEditText()
+
         printAnimalShelterQueue(animShelterQueue.toString())
     }
 
@@ -39,20 +41,26 @@ class AnimalShelterPresenter
 
     override fun choiceAnimal(): String {
         val chooseAnimal = StringBuilder()
-        val species = animalShelterActivity.edittext_choice_activity_animal_shelter.toString().trim().toLowerCase()
+        val species = animalShelterActivity.edittext_activity_animal_shelter.text.toString().trim().toLowerCase()
         val animal: Animal
 
-        if ("dog" == species) {
-            animal = animShelterQueue.removeDog()!!
-        } else if ("cat" == species) {
-            animal = animShelterQueue.removeCat()!!
-        } else if ("any" == species) {
-            animal = animShelterQueue.removeAny()
-        } else {
-            return "잘못 입력하셨습니다. dog, cat, any 중에 골라주세요."
-        }
+        try {
+            if ("dog" == (species)) {
+                animal = animShelterQueue.removeDog()!!
+            } else if ("cat" == species) {
+                animal = animShelterQueue.removeCat()!!
+            } else if ("any" == species) {
+                animal = animShelterQueue.removeAny()
+            } else {
+                return "잘못 입력하셨습니다. dog, cat, any 중에 골라주세요."
+            }
 
-        chooseAnimal.append(animal.crying()).append(" - ").append(animal.name)
+            chooseAnimal.append(animal.name).append(" - ").append(animal.crying()).append("\n\n").append(animShelterQueue.toString())
+        } catch (e: NoSuchElementException) {
+            chooseAnimal.append("해당 동물은 더이상 없습니다.").append("\n\n").append(animShelterQueue.toString())
+
+            e.stackTrace
+        }
 
         return chooseAnimal.toString()
     }

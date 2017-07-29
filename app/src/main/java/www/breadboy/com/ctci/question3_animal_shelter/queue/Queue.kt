@@ -14,25 +14,26 @@ class Queue<A> {
     fun add(item: A) {
         val newNode: Node<A> = Node(item)
 
-        newNode.previous = rear
+        if (rear != null) {
+            newNode.previous = rear
 
-        rear?.next = newNode
+            rear?.next = newNode
+        }
+
         rear = newNode
 
-        front = if (rear == null) rear else front
+        front = if (front == null) rear else front
     }
 
     fun removeNode(node: Node<A>): Node<A> {
         val prevNode = node.previous
         val nextNode = node.next
 
-        if (prevNode != null) {
-            prevNode.next = nextNode
-        } else {
-            front = nextNode
-        }
+        if (prevNode != null) prevNode.next = nextNode else front = nextNode
 
         nextNode?.previous = prevNode
+
+        if (node == rear) rear = node.previous
 
         node.previous = null
         node.next = null
@@ -44,9 +45,10 @@ class Queue<A> {
         if (front == null) throw NoSuchElementException()
 
         val node = front
-        val data: A = front!!.data
+        val data = front!!.data
 
         front = front?.next
+        front?.previous = null
 
         node?.previous = null
         node?.next = null
@@ -59,37 +61,39 @@ class Queue<A> {
     fun removeDog(): A? {
         if (front == null) throw NoSuchElementException()
 
-        var prevNode = rear
+        var nextNode = front
         var data: A
 
-        while (prevNode?.previous != null) {
-            data = prevNode.data
+        while (nextNode != null) {
+            data = nextNode.data
+
             if (data is Dog) {
-                removeNode(prevNode)
+                removeNode(nextNode)
 
                 return data
-            } else prevNode = prevNode.previous
+            } else nextNode = nextNode.next
         }
 
-        return null
+        throw NoSuchElementException()
     }
 
     fun removeCat(): A? {
         if (front == null) throw NoSuchElementException()
 
-        var prevNode = rear
+        var nextNode = front
         var data: A
 
-        while (prevNode?.previous != null) {
-            data = prevNode.data
+        while (nextNode != null) {
+            data = nextNode.data
+
             if (data is Cat) {
-                removeNode(prevNode)
+                removeNode(nextNode)
 
                 return data
-            } else prevNode = prevNode.previous
+            } else nextNode = nextNode.next
         }
 
-        return null
+        throw NoSuchElementException()
     }
 
     fun peek(): A {
@@ -108,16 +112,17 @@ class Queue<A> {
      * @return All node
      */
     override fun toString(): String {
-        val linkedListSb: StringBuilder = StringBuilder()
+        val linkedListSb = StringBuilder()
         var node = front
 
-        linkedListSb.append("(front)")
-
         while (node != null) {
+            linkedListSb.append(if (node == front) "(front)" else "")
             linkedListSb.append(node.data)
 
             node = node.next
-            linkedListSb.append(if (node != null) " <-> " else "(rear)")
+
+            linkedListSb.append(if (node != null) " <-> " else "")
+            linkedListSb.append(if (node == rear) "(rear)" else "")
         }
 
         return linkedListSb.toString()
