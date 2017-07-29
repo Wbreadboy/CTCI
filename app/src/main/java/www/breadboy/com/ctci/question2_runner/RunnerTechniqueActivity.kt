@@ -27,6 +27,7 @@ class RunnerTechniqueActivity : RunnerTechniqueContract.View(), View.OnClickList
 
         setContentView(R.layout.activity_runner_technique)
         setupActivityComponent()
+
         initView()
     }
 
