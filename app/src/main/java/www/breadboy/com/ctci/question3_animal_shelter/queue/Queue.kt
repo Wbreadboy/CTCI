@@ -5,12 +5,20 @@ import www.breadboy.com.ctci.question3_animal_shelter.data.Dog
 
 /**
  * Created by SDG on 2017. 7. 28..
+ *
+ * Animal Shelter Queue
  */
 
 class Queue<A> {
     var rear: Node<A>? = null
     var front: Node<A>? = null
 
+    /**
+     * enQueue
+     *
+     * @param item  added item
+     *
+     */
     fun add(item: A) {
         val newNode: Node<A> = Node(item)
 
@@ -25,6 +33,12 @@ class Queue<A> {
         front = if (front == null) rear else front
     }
 
+    /**
+     * deQueue, but not must have removed front. Can remove wanted node.
+     *
+     * @param node  removed node
+     * @return if remove success, return the node.
+     */
     fun removeNode(node: Node<A>): Node<A> {
         val prevNode = node.previous
         val nextNode = node.next
@@ -41,6 +55,11 @@ class Queue<A> {
         return node
     }
 
+    /**
+     * if user input 'any', remove any animal.
+     *
+     * @return removed node data.
+     */
     fun removeAny(): A {
         if (front == null) throw NoSuchElementException()
 
@@ -58,6 +77,11 @@ class Queue<A> {
         return data
     }
 
+    /**
+     * if user input 'dog', remove dog species.
+     *
+     * @return removed node data.
+     */
     fun removeDog(): A? {
         if (front == null) throw NoSuchElementException()
 
@@ -77,6 +101,11 @@ class Queue<A> {
         throw NoSuchElementException()
     }
 
+    /**
+     * if user input 'cat', remove cat species.
+     *
+     * @return removed node data.
+     */
     fun removeCat(): A? {
         if (front == null) throw NoSuchElementException()
 
@@ -96,18 +125,28 @@ class Queue<A> {
         throw NoSuchElementException()
     }
 
+    /**
+     * print front node.
+     *
+     * @return front node
+     */
     fun peek(): A {
         if (front == null) throw NoSuchElementException()
 
         return front!!.data
     }
 
+    /**
+     * if this queue is empty, return true.
+     *
+     * @return has empty queue
+     */
     fun isEmpty(): Boolean {
         return front == null
     }
 
     /**
-     * 모든 node printing
+     * all node printing
      *
      * @return All node
      */
