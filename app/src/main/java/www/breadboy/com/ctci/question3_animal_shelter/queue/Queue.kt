@@ -1,6 +1,5 @@
-package www.breadboy.com.ctci.question3_animal_shelter.Queue
+package www.breadboy.com.ctci.question3_animal_shelter.queue
 
-import android.text.TextUtils
 import www.breadboy.com.ctci.question3_animal_shelter.data.Cat
 import www.breadboy.com.ctci.question3_animal_shelter.data.Dog
 
@@ -21,19 +20,6 @@ class Queue<A> {
         rear = newNode
 
         front = if (rear == null) rear else front
-    }
-
-    /**
-     * EditText view에서 입력된 값을 Queue로 변환
-     *
-     * @param linkedList    EditText getText
-     */
-    fun addToEditText(linkedList: String) {
-        val nodeArray: Array<String> = TextUtils.split(linkedList, "\\s+")
-
-        for (node in nodeArray) {
-            add(node as A)
-        }
     }
 
     fun removeNode(node: Node<A>): Node<A> {

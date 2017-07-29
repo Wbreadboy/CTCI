@@ -19,7 +19,7 @@
 		</activity>
 		<activity android:name=".question2_runner.RunnerTechniqueActivity">
 		</activity>
-		<activity android:name=".question3_animal_shelter.Queue.AnimalShelterActivity">
+		<activity android:name=".question3_animal_shelter.queue.AnimalShelterActivity">
 		</activity>
 		<activity android:name=".question3_animal_shelter.AnimalShelterActivity">
 		</activity>

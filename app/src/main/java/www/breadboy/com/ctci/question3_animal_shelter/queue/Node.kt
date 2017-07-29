@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.question3_animal_shelter.Queue
+package www.breadboy.com.ctci.question3_animal_shelter.queue
 
 /**
  * Created by SDG on 2017. 7. 28..

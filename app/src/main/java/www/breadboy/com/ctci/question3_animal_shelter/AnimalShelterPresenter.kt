@@ -1,7 +1,7 @@
 package www.breadboy.com.ctci.question3_animal_shelter
 
 import kotlinx.android.synthetic.main.activity_animal_shelter.*
-import www.breadboy.com.ctci.question3_animal_shelter.Queue.Queue
+import www.breadboy.com.ctci.question3_animal_shelter.queue.Queue
 import www.breadboy.com.ctci.question3_animal_shelter.data.Animal
 import www.breadboy.com.ctci.question3_animal_shelter.data.Cat
 import www.breadboy.com.ctci.question3_animal_shelter.data.Dog
