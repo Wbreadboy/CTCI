@@ -33,7 +33,7 @@ class Queue<A> {
 
         nextNode?.previous = prevNode
 
-        if (node == rear) rear = node.previous
+        rear = if (node == rear) node.previous else rear
 
         node.previous = null
         node.next = null

@@ -52,7 +52,7 @@ class AnimalShelterPresenter
             } else if ("any" == species) {
                 animal = animShelterQueue.removeAny()
             } else {
-                return "잘못 입력하셨습니다. dog, cat, any 중에 골라주세요."
+                return "잘못 입력하셨습니다. dog, cat, any 중에 골라주세요. \n\n $animShelterQueue"
             }
 
             chooseAnimal.append(animal.name).append(" - ").append(animal.crying()).append("\n\n").append(animShelterQueue.toString())
