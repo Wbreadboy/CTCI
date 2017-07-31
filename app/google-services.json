@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "299222738148",
+    "firebase_url": "https://ctci-25f24.firebaseio.com",
+    "project_id": "ctci-25f24",
+    "storage_bucket": "ctci-25f24.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299222738148:android:3f9581598ab315f1",
+        "android_client_info": {
+          "package_name": "www.breadboy.com.ctci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299222738148-gv18gh0qodc11me00ohqb646n2dcr856.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2LYSZgoI4qL89TTYV2HGMMM2XQepBly0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
