@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.question2_runner.linkedlist
+package www.breadboy.com.ctci.data
 
 /**
  * Created by N4039 on 2017-07-24.
