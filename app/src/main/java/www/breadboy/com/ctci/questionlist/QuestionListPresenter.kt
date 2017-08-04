@@ -3,6 +3,7 @@ package www.breadboy.com.ctci.questionlist
 import www.breadboy.com.ctci.data.Question
 import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterActivity
+import www.breadboy.com.ctci.question3_sort_stack.SortStackActivity
 import javax.inject.Inject
 
 /**
@@ -18,5 +19,6 @@ constructor(val questionListActivity: QuestionListActivity) : QuestionListContra
     override fun start() {
         questionListActivity.questionListAdapter.addQuestion(Question(RunnerTechniqueActivity(), "2 - Runner Technique"))
         questionListActivity.questionListAdapter.addQuestion(Question(AnimalShelterActivity(), "3.6 - Animal Shelter"))
+        questionListActivity.questionListAdapter.addQuestion(Question(SortStackActivity(), "3.5 - Sort Stack"))
     }
 }

@@ -14,7 +14,8 @@ import javax.inject.Inject
 
 class AnimalShelterPresenter
 
-@Inject constructor(val animalShelterActivity: AnimalShelterActivity) : AnimalShelterContract.Presenter {
+@Inject
+constructor(val animalShelterActivity: AnimalShelterActivity) : AnimalShelterContract.Presenter {
 
     lateinit var animShelterQueue: Queue<Animal>
 
