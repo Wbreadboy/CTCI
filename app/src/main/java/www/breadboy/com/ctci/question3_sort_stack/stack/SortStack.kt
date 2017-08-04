@@ -1,5 +1,6 @@
 package www.breadboy.com.ctci.question3_sort_stack.stack
 
+import www.breadboy.com.ctci.question3_sort_stack.util.BinarySearcher
 import java.util.*
 
 /**
@@ -10,7 +11,7 @@ class SortStack<T> {
     var ascLinkedList = LinkedList<T>()
 
     fun push(value: T) {
-        ascLinkedList.addLast(value)
+        ascLinkedList.add(BinarySearcher(ascLinkedList, value).getInsertedIndex(), value)
     }
 
     fun pop() = ascLinkedList.removeLast()
@@ -18,4 +19,16 @@ class SortStack<T> {
     fun peek() = ascLinkedList.peekLast()
 
     fun isEmpty() = ascLinkedList.isEmpty()
+
+    override fun toString(): String {
+        val linkedListSb = StringBuilder()
+        var count = 0
+
+        for (value in ascLinkedList) {
+            linkedListSb.append(value)
+            linkedListSb.append(if (++count != ascLinkedList.size) " -> " else "(top)")
+        }
+
+        return linkedListSb.toString()
+    }
 }

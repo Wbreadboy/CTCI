@@ -9,6 +9,8 @@ import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 import www.breadboy.com.ctci.question2_runner.RunnerTechniqueComponent
 import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterActivity
 import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterComponent
+import www.breadboy.com.ctci.question3_sort_stack.SortStackActivity
+import www.breadboy.com.ctci.question3_sort_stack.SortStackComponent
 import www.breadboy.com.ctci.questionlist.QuestionListActivity
 import www.breadboy.com.ctci.questionlist.QuestionListComponent
 
@@ -19,7 +21,8 @@ import www.breadboy.com.ctci.questionlist.QuestionListComponent
 @Module(subcomponents = arrayOf(
         QuestionListComponent::class,
         RunnerTechniqueComponent::class,
-        AnimalShelterComponent::class))
+        AnimalShelterComponent::class,
+        SortStackComponent::class))
 
 abstract class CtciApplicationModule {
 
@@ -37,4 +40,9 @@ abstract class CtciApplicationModule {
     @IntoMap
     @QuestionActivityKey(AnimalShelterActivity::class)
     abstract fun bindAnimalShelterActivity(impl: AnimalShelterComponent.Builder): QuestionComponentBuilder<*, *>
+
+    @Binds
+    @IntoMap
+    @QuestionActivityKey(SortStackActivity::class)
+    abstract fun bindSortStackActivity(impl: SortStackComponent.Builder): QuestionComponentBuilder<*, *>
 }
