@@ -7,3 +7,6 @@
 
 ### 170728(fri)
 [chapter3 3.6 - Animal shelter](https://github.com/Wbreadboy/CTCI/blob/master/app/src/main/java/www/breadboy/com/ctci/question3_animal_shelter/queue/Queue.kt)
+
+### 170803(thu)
+[chapter3 3.5 - Sort stack](https://github.com/1dollor/CTCI/tree/master/app/src/main/java/www/breadboy/com/ctci/question3_sort_stack)
