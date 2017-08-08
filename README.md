@@ -10,3 +10,5 @@
 
 ### 170803(thu)
 [chapter3 3.5 - Sort stack](https://github.com/1dollor/CTCI/tree/master/app/src/main/java/www/breadboy/com/ctci/question3_sort_stack)
+
+[Solution](http://breadboy.tistory.com/192)
