@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:padding="20dp"
 	tools:context="www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTreeActivity">
 
-</android.support.constraint.ConstraintLayout>
+	<TextView
+		android:id="@+id/textview_activity_minimal_tree"
+		android:layout_width="match_parent"
+		android:layout_height="150dp"
+		android:textColor="@color/black"
+		android:textSize="20sp"/>
+
+	<EditText
+		android:id="@+id/edittext_activity_minimal_tree"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:hint="@string/input_hint"/>
+
+	<Button
+		android:id="@+id/btn_activity_minimal_tree"
+		android:layout_width="65dp"
+		android:layout_height="50dp"
+		android:layout_gravity="center_horizontal"
+		android:text="@string/input"
+		android:textColor="@color/black"/>
+</LinearLayout>

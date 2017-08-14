@@ -8,7 +8,18 @@ import www.breadboy.com.ctci.base.BasePresenter
  */
 interface MinimalTreeContract {
 
-    abstract class View : BaseActivity<Presenter>()
+    abstract class View : BaseActivity<Presenter>() {
 
-    interface Presenter : BasePresenter
+    }
+
+    interface Presenter : BasePresenter {
+
+        fun initMinimalTree()
+
+        fun stringToIntArray(values: String): IntArray
+
+        fun clickInputBtn()
+
+        fun initTreeData()
+    }
 }

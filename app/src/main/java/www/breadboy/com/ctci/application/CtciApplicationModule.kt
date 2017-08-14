@@ -11,6 +11,8 @@ import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterActivity
 import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterComponent
 import www.breadboy.com.ctci.question3_sort_stack.SortStackActivity
 import www.breadboy.com.ctci.question3_sort_stack.SortStackComponent
+import www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTreeActivity
+import www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTreeComponent
 import www.breadboy.com.ctci.questionlist.QuestionListActivity
 import www.breadboy.com.ctci.questionlist.QuestionListComponent
 
@@ -22,7 +24,8 @@ import www.breadboy.com.ctci.questionlist.QuestionListComponent
         QuestionListComponent::class,
         RunnerTechniqueComponent::class,
         AnimalShelterComponent::class,
-        SortStackComponent::class))
+        SortStackComponent::class,
+        MinimalTreeComponent::class))
 
 abstract class CtciApplicationModule {
 
@@ -45,4 +48,9 @@ abstract class CtciApplicationModule {
     @IntoMap
     @QuestionActivityKey(SortStackActivity::class)
     abstract fun bindSortStackActivity(impl: SortStackComponent.Builder): QuestionComponentBuilder<*, *>
+
+    @Binds
+    @IntoMap
+    @QuestionActivityKey(MinimalTreeActivity::class)
+    abstract fun bindMinimalTreeActivity(impl: MinimalTreeComponent.Builder): QuestionComponentBuilder<*, *>
 }
