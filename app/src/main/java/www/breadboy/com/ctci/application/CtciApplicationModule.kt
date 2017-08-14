@@ -11,8 +11,8 @@ import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterActivity
 import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterComponent
 import www.breadboy.com.ctci.question3_sort_stack.SortStackActivity
 import www.breadboy.com.ctci.question3_sort_stack.SortStackComponent
-import www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTreeActivity
-import www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTreeComponent
+import www.breadboy.com.ctci.question4_minimal_tree.MinimalTreeActivity
+import www.breadboy.com.ctci.question4_minimal_tree.MinimalTreeComponent
 import www.breadboy.com.ctci.questionlist.QuestionListActivity
 import www.breadboy.com.ctci.questionlist.QuestionListComponent
 

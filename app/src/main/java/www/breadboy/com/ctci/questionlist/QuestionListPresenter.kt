@@ -4,7 +4,7 @@ import www.breadboy.com.ctci.data.Question
 import www.breadboy.com.ctci.question2_runner.RunnerTechniqueActivity
 import www.breadboy.com.ctci.question3_animal_shelter.AnimalShelterActivity
 import www.breadboy.com.ctci.question3_sort_stack.SortStackActivity
-import www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTreeActivity
+import www.breadboy.com.ctci.question4_minimal_tree.MinimalTreeActivity
 import javax.inject.Inject
 
 /**

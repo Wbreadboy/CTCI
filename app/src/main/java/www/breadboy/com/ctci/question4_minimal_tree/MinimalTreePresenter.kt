@@ -1,8 +1,7 @@
 package www.breadboy.com.ctci.question4_minimal_tree
 
-import kotlinx.android.synthetic.main.activity_minimal_tree.*
-import www.breadboy.com.ctci.question4_minimal_tree.tree.tree.MinimalTree
-import www.breadboy.com.ctci.question4_minimal_tree.tree.util.ArrayUtil
+import www.breadboy.com.ctci.question4_minimal_tree.tree.MinimalTree
+import www.breadboy.com.ctci.question4_minimal_tree.util.ArrayUtil
 import javax.inject.Inject
 
 /**
