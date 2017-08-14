@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.question4_minimal_tree.tree
+package www.breadboy.com.ctci.question4_minimal_tree
 
 import kotlinx.android.synthetic.main.activity_minimal_tree.*
 import www.breadboy.com.ctci.question4_minimal_tree.tree.tree.MinimalTree

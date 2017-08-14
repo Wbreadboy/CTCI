@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.question4_minimal_tree.tree.util
+package www.breadboy.com.ctci.question4_minimal_tree.util
 
 import android.util.Log
 

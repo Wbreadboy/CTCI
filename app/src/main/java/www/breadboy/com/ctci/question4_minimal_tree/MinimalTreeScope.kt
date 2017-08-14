@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.question4_minimal_tree.tree
+package www.breadboy.com.ctci.question4_minimal_tree
 
 import javax.inject.Scope
 

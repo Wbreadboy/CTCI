@@ -1,4 +1,4 @@
-package www.breadboy.com.ctci.question4_minimal_tree.tree.tree
+package www.breadboy.com.ctci.question4_minimal_tree.tree
 
 /**
  * Created by N4039 on 2017-08-14.

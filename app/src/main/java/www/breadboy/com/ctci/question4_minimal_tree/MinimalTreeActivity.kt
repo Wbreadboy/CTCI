@@ -1,7 +1,6 @@
-package www.breadboy.com.ctci.question4_minimal_tree.tree
+package www.breadboy.com.ctci.question4_minimal_tree
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_minimal_tree.*
 import www.breadboy.com.ctci.R
