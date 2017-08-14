@@ -11,7 +11,9 @@ class SortStack<T> {
     var ascLinkedList = LinkedList<T>()
 
     fun push(value: T) {
-        ascLinkedList.add(BinarySearcher(ascLinkedList, value).getInsertedIndex(), value)
+        val insertedIndex = BinarySearcher(ascLinkedList, value).getInsertedIndex()
+
+        if (insertedIndex != -1) ascLinkedList.add(insertedIndex, value) else return
     }
 
     fun pop() = ascLinkedList.removeLast()

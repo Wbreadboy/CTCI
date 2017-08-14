@@ -23,6 +23,8 @@
 		</activity>
 		<activity android:name=".question3_sort_stack.SortStackActivity">
 		</activity>
+		<activity android:name=".question4_minimal_tree.tree.MinimalTreeActivity">
+		</activity>
 	</application>
 
 </manifest>
