@@ -1,7 +1,7 @@
 package www.breadboy.com.ctci.question2_runner.linkedlist
 
 import android.text.TextUtils
-import www.breadboy.com.ctci.data.Node
+import www.breadboy.com.ctci.data.LinkedListNode
 
 /**
  * Created by N4039 on 2017-07-24.
@@ -11,17 +11,17 @@ import www.breadboy.com.ctci.data.Node
 
 class LinkedList<T> {
 
-    private var head: Node<T>? = null
+    private var head: LinkedListNode<T>? = null
 
-    private var follower: Node<T>? = null
-    private var runner: Node<T>? = null
+    private var follower: LinkedListNode<T>? = null
+    private var runner: LinkedListNode<T>? = null
 
     /**
      * LinkedList의 마지막 node를 반환
      *
      * @return  마지막 노드
      */
-    fun findLastNode(): Node<T>? {
+    fun findLastNode(): LinkedListNode<T>? {
         var node = head
 
         if (node == null) {
@@ -54,7 +54,7 @@ class LinkedList<T> {
      * @param value value
      */
     fun appendToTail(value: T) {
-        val newNode = Node(value)
+        val newNode = LinkedListNode(value)
         val lastNode = this.findLastNode()
 
         if (lastNode != null) {
@@ -68,17 +68,17 @@ class LinkedList<T> {
     /**
      * 해당 node 다음에 새로운 node 삽입
      *
-     * @param targetNode    target node
+     * @param targetLinkedListNode    target node
      * @param value         inserting node value
      */
-    fun appendToNode(targetNode: Node<T>?, value: T) {
-        val newNode = Node(value)
-        val nextNode = targetNode?.next
+    fun appendToNode(targetLinkedListNode: LinkedListNode<T>?, value: T) {
+        val newNode = LinkedListNode(value)
+        val nextNode = targetLinkedListNode?.next
 
-        if (targetNode != null) {
-            newNode.previous = targetNode
-            targetNode.next = newNode
-            newNode.previous = targetNode
+        if (targetLinkedListNode != null) {
+            newNode.previous = targetLinkedListNode
+            targetLinkedListNode.next = newNode
+            newNode.previous = targetLinkedListNode
         } else {
             head = newNode
         }
@@ -89,11 +89,11 @@ class LinkedList<T> {
     /**
      * 해당 노드를 삭제
      *
-     * @param node      deleting node
+     * @param linkedListNode      deleting linkedListNode
      */
-    fun removeNode(node: Node<T>): T {
-        val prevNode = node.previous
-        val nextNode = node.next
+    fun removeNode(linkedListNode: LinkedListNode<T>): T {
+        val prevNode = linkedListNode.previous
+        val nextNode = linkedListNode.next
 
         if (prevNode != null) {
             prevNode.next = nextNode
@@ -103,10 +103,10 @@ class LinkedList<T> {
 
         nextNode?.previous = prevNode
 
-        node.previous = null
-        node.next = null
+        linkedListNode.previous = null
+        linkedListNode.next = null
 
-        return node.value
+        return linkedListNode.value
     }
 
     /**
@@ -149,21 +149,21 @@ class LinkedList<T> {
      * 해당 node를 입력한 거리만큼 이동
      *
      * @param count 이동시킬 거리
-     * @param node  이동시킬 node
-     * @return      이동시킨 node 반환
+     * @param linkedListNode  이동시킬 linkedListNode
+     * @return      이동시킨 linkedListNode 반환
      */
-    fun runToLinkedList(node: Node<T>?, count: Int): Node<T>? {
-        var runNode: Node<T>? = node
+    fun runToLinkedList(linkedListNode: LinkedListNode<T>?, count: Int): LinkedListNode<T>? {
+        var runLinkedListNode: LinkedListNode<T>? = linkedListNode
 
         for (i in 0 until count) {
-            if (runNode?.next == null) {
+            if (runLinkedListNode?.next == null) {
                 return null
             }
 
-            runNode = runNode.next
+            runLinkedListNode = runLinkedListNode.next
         }
 
-        return runNode
+        return runLinkedListNode
     }
 
     /**
